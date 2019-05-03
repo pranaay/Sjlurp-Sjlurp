@@ -35,10 +35,20 @@
     	.listKaKuda {
     		margin-bottom: 20px;
     	}
+    	.hide {
+    		display: none;
+    	}
     </style>
     <title>IIITD Seminar Block</title>
   </head>
   <body class="container-fluid" style="width: 100vw; height: 100vh; overflow-y: hidden; background: #E0FBFC">
+  	
+  	<div style="position: absolute; height: 100vh; width: 100vw; z-index: 999" id="vidWrap">
+	  	<video class="w-100 h-100" autoplay muted onclick="removeVid()">
+		  	<source src="vid.mp4" type="video/mp4">
+		</video>
+  	</div>
+  	
   	<div class="row" style="height: 100vh;">
   		<div class="col-8" style="height: 100vh; position: absolute; float: left;">
   			<div class="row h-75 p-5 animated zoomIn" style="position: relative;">
@@ -144,6 +154,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script type="text/javascript">
     	$( document ).ready(function() {
+	    	
+	    	personIdentifier = false;
+
 	    	c11 = [1, 7, 3, 6];
 	    	c12 = [1, 7, 2];
 	    	c13 = [1, 4, 8];
@@ -231,13 +244,54 @@
 			    }
 			}
 			
-		setInterval(function() {			
-			$.get( "http://0.0.0.0:5000", function( data ) {
-			  console.log(data);
-			});
-		}, 2000);
-		
+			if(!personIdentifier){
+				setInterval(function() {			
+					$.get( "http://0.0.0.0:5000", function( data ) {
+					  if(data == "true"){
+					  	personIdentifier = true;
+					  }
+					  else{
+					  	personIdentifier = false;
+					  }
+					  if(personIdentifier){
+					  	removeVid();
+					  }
+					  else{
+					  	addVid();
+					  }
+					});
+				}, 2000);
+			}
+			else{
+				setInterval(function() {			
+					$.get( "http://0.0.0.0:5000", function( data ) {
+					  if(data == "true"){
+					  	personIdentifier = true;
+					  }
+					  else{
+					  	personIdentifier = false;
+					  }
+					  if(personIdentifier){
+					  	removeVid();
+					  }
+					  else{
+					  	addVid();
+					  }
+					});
+				}, 15000);
+			}
+
 		});
+
+
+		function removeVid() {
+			$("#vidWrap").addClass("hide");
+		}
+
+		function addVid() {
+			$("#vidWrap").removeClass("hide");	
+		}
+
     </script>
   </body>
 </html>
