@@ -243,8 +243,9 @@
 		    }
 		}
 		
-		if(!personIdentifier){
-			setInterval(function() {			
+		
+		setInterval(function() {			
+			if(!personIdentifier){
 				$.get( "http://0.0.0.0:5000", function( data ) {
 				  if(data == "true"){
 				  	personIdentifier = true;
@@ -253,10 +254,11 @@
 				  	removeVid();
 				  }
 				});
-			}, 2000);
-		}
-		else{
-			setInterval(function() {			
+			}	
+		}, 2000);
+		
+		setInterval(function() {			
+			if(personIdentifier){
 				$.get( "http://0.0.0.0:5000", function( data ) {
 				  if(data != "true"){
 				  	personIdentifier = false;
@@ -265,8 +267,9 @@
 				  	addVid();
 				  }
 				});
-			}, 15000);
-		}
+			}
+		}, 15000);
+		
 
 		function removeVid() {
 			$("#vidWrap").addClass("hide");
