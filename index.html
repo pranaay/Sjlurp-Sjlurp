@@ -249,14 +249,8 @@
 				  if(data == "true"){
 				  	personIdentifier = true;
 				  }
-				  else{
-				  	personIdentifier = false;
-				  }
 				  if(personIdentifier){
 				  	removeVid();
-				  }
-				  else{
-				  	addVid();
 				  }
 				});
 			}, 2000);
@@ -264,16 +258,10 @@
 		else{
 			setInterval(function() {			
 				$.get( "http://0.0.0.0:5000", function( data ) {
-				  if(data == "true"){
-				  	personIdentifier = true;
-				  }
-				  else{
+				  if(data != "true"){
 				  	personIdentifier = false;
 				  }
-				  if(personIdentifier){
-				  	removeVid();
-				  }
-				  else{
+				  if(!personIdentifier){
 				  	addVid();
 				  }
 				});
