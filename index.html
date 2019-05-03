@@ -41,7 +41,7 @@
     </style>
     <title>IIITD Seminar Block</title>
   </head>
-  <body class="container-fluid" style="width: 100vw; height: 100vh; overflow-y: hidden; background: #E0FBFC">
+  <body class="container-fluid p-0" style="width: 100vw; height: 100vh; overflow: hidden; background: #E0FBFC">
   	
   	<div style="position: absolute; height: 100vh; width: 100vw; z-index: 999" id="vidWrap">
 	  	<video class="w-100 h-100" autoplay muted onclick="removeVid()">
@@ -113,7 +113,7 @@
 						<button id="btn2" type="button" onclick="changeImage1(event);" class="btn btn-dark py-4 border-0 animated zoomIn delay-1s fast" id="animate3" style="background-color: #3D5A80">Seminar First Floor</button>
 					</div>
 					<div class="col justify-content-center d-flex align-items-center">
-						<button type="button" class="btn btn-dark py-4 border-0 animated zoomIn delay-1s fast" id="animate4" style="background-color: #E85D75">Change Building</button>
+						<button type="button" class="btn btn-dark py-4 border-0 disabled animated zoomIn delay-1s fast" id="animate4" style="background-color: #E85D75">Change Building</button>
 					</div>
   				</div>
   			</div>
@@ -121,25 +121,25 @@
   		<div class="col-4 px-5 slideInRight animated delay-1s" id="animate5" style="overflow: auto; position: absolute; right: 0; height: 100vh; background-color: #293241">
   			
   			<form class="form-inline pt-5 pb-4 justify-content-center sticky-top" style="background-color: #293241;">
-			    <input class="form-control mr-sm-2 w-75 py-2" id="myInput" onkeyup="search()" type="search" placeholder="Search" aria-label="Search">
+			    <input class="form-control mr-sm-2 w-75 py-2" id="myInput" onkeyup="search()" type="search" placeholder="Where would you like go?" aria-label="Search">
 			    <button class="btn btn-outline-light my-2 py-2 my-sm-0" type="submit">Search</button>
 			</form>
 
 			<div class="pl-2 text-white">
 				<ul id="myUL" style="list-style-type: none" class="p-0">
-				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">Seminar C01</a></li>
-				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">Seminar C02</a></li>
-				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">Seminar C03</a></li>
-				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">Seminar C04</a></li>
-				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">Seminar C05</a></li>
-				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">Seminar C06</a></li>
-				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">Seminar C11</a></li>
-				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">Seminar C12</a></li>
-				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">Seminar C13</a></li>
-				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">Seminar C14</a></li>
-				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">Seminar C15</a></li>
-				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">Seminar C16</a></li>
-				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">Seminar C17</a></li>
+				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">C01 - Dr. Vikram Goyal</a></li>
+				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">C02 - Dr. Richa Singh</a></li>
+				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">C03 - Shannan Lab</a></li>
+				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">C04 - BTech Lab</a></li>
+				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">C05 - Dr. Aman Parnami</a></li>
+				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">C06 - Weave Lab</a></li>
+				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">C11 - Infosys Lab</a></li>
+				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">C12 - MTech Lab</a></li>
+				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">C13 - Dr. Sujay Deb</a></li>
+				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">C14 - Embedded Lab</a></li>
+				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">C15 - Meeting Room</a></li>
+				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">C16 - Discussion Room</a></li>
+				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">C17 - Dr. Vivek Bohra</a></li>
 				</ul>
 			</div>
   		</div>
@@ -255,7 +255,7 @@
 				  }
 				});
 			}	
-		}, 2000);
+		}, 3000);
 		
 		setInterval(function() {			
 			if(personIdentifier){
