@@ -230,19 +230,13 @@
 			        }
 			    }
 			}
-
-			setInterval(function()
-			{ 
-			    $.ajax({
-			      type:"post",
-			      url:"0.0.0.0:5000",
-			      datatype:"html",
-			      success:function(data)
-			      {
-			      	    console.log(data);
-			      }
-			    });
-			}, 2000);
+			
+		setInterval(function() {			
+			$.get( "http://0.0.0.0:5000", function( data ) {
+			  console.log(data);
+			});
+		}, 2000);
+		
 		});
     </script>
   </body>
