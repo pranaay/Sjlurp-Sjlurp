@@ -51,7 +51,7 @@
   	
   	<div class="row" style="height: 100vh;">
   		<div class="col-8" style="height: 100vh; position: absolute; float: left;">
-  			<div class="row h-75 p-5 animated zoomIn" style="position: relative;">
+  			<div class="row h-75 p-5 animated zoomIn" style="position: relative;" id="animate1">
   				<div class="h-100 w-100">
   					<img src="floor0.png" class="img-fluid h-100" id="imageMeri">
   				</div>
@@ -107,18 +107,18 @@
   			<div class="row h-25">
   				<div class="row w-100">
 					<div class="col justify-content-center d-flex align-items-center">
-						<button id="btn1" type="button" onclick="changeImage0(event);" class="btn btn-dark py-4 border-0 animated zoomIn delay-1s fast" style="background-color: #293241">Seminar Ground Floor</button>
+						<button id="btn1" type="button" onclick="changeImage0(event);" class="btn btn-dark py-4 border-0 animated zoomIn delay-1s fast" id="animate2" style="background-color: #293241">Seminar Ground Floor</button>
 					</div>
 					<div class="col justify-content-center d-flex align-items-center">
-						<button id="btn2" type="button" onclick="changeImage1(event);" class="btn btn-dark py-4 border-0 animated zoomIn delay-1s fast" style="background-color: #3D5A80">Seminar First Floor</button>
+						<button id="btn2" type="button" onclick="changeImage1(event);" class="btn btn-dark py-4 border-0 animated zoomIn delay-1s fast" id="animate3" style="background-color: #3D5A80">Seminar First Floor</button>
 					</div>
 					<div class="col justify-content-center d-flex align-items-center">
-						<button type="button" class="btn btn-dark py-4 border-0 animated zoomIn delay-1s fast" style="background-color: #E85D75">Change Building</button>
+						<button type="button" class="btn btn-dark py-4 border-0 animated zoomIn delay-1s fast" id="animate4" style="background-color: #E85D75">Change Building</button>
 					</div>
   				</div>
   			</div>
   		</div>
-  		<div class="col-4 px-5 slideInRight animated delay-1s" style="overflow: auto; position: absolute; right: 0; height: 100vh; background-color: #293241">
+  		<div class="col-4 px-5 slideInRight animated delay-1s" id="animate5" style="overflow: auto; position: absolute; right: 0; height: 100vh; background-color: #293241">
   			
   			<form class="form-inline pt-5 pb-4 justify-content-center sticky-top" style="background-color: #293241;">
 			    <input class="form-control mr-sm-2 w-75 py-2" id="myInput" onkeyup="search()" type="search" placeholder="Search" aria-label="Search">
@@ -272,13 +272,13 @@
 		
 
 		function removeVid() {
-			$("#vidWrap").addClass("hide");
 			personIdentifier = true;
+			$("#vidWrap").addClass("hide");
 		}
 
 		function addVid() {
-			$("#vidWrap").removeClass("hide");	
 			personIdentifier = false;
+			$("#vidWrap").removeClass("hide");	
 		}
 
     </script>
