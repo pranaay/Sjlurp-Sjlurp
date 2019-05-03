@@ -1,11 +1,14 @@
-from flask import Flask ,render_template
+from flask import Flask ,render_template, jsonify
 import RPi.GPIO as GPIO
 import time 
+from flask_cors import CORS, cross_origin
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
-@app.route('/')
+@app.route('/', methods=["POST", "GET"])
 def hello_world():
-	return render_template("index.html",state = getState())
+	return jsonify(getState())
 
 
 def getState():
