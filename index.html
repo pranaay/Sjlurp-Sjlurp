@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
+    <link rel="stylesheet" type="text/css" href="animate.css">
+
     <style type="text/css">
+    	
     	html, body {
     		font-family: 'Open Sans', sans-serif;
     	}
@@ -38,7 +41,7 @@
   <body class="container-fluid" style="width: 100vw; height: 100vh; overflow-y: hidden; background: #E0FBFC">
   	<div class="row" style="height: 100vh;">
   		<div class="col-8" style="height: 100vh; position: absolute; float: left;">
-  			<div class="row h-75 p-5" style="position: relative;">
+  			<div class="row h-75 p-5 animated zoomIn" style="position: relative;">
   				<div class="h-100 w-100">
   					<img src="floor0.png" class="img-fluid h-100" id="imageMeri">
   				</div>
@@ -94,18 +97,18 @@
   			<div class="row h-25">
   				<div class="row w-100">
 					<div class="col justify-content-center d-flex align-items-center">
-						<button id="btn1" type="button" onclick="changeImage0(event)" class="btn btn-dark py-4 border-0" style="background-color: #293241">Seminar Ground Floor</button>
+						<button id="btn1" type="button" onclick="changeImage0(event)" class="btn btn-dark py-4 border-0 animated zoomIn delay-1s fast" style="background-color: #293241">Seminar Ground Floor</button>
 					</div>
 					<div class="col justify-content-center d-flex align-items-center">
-						<button id="btn2" type="button" onclick="changeImage1(event)" class="btn btn-dark py-4 border-0" style="background-color: #3D5A80">Seminar First Floor</button>
+						<button id="btn2" type="button" onclick="changeImage1(event)" class="btn btn-dark py-4 border-0 animated zoomIn delay-1s fast" style="background-color: #3D5A80">Seminar First Floor</button>
 					</div>
 					<div class="col justify-content-center d-flex align-items-center">
-						<button type="button" class="btn btn-dark py-4 border-0" style="background-color: #E85D75">Change Building</button>
+						<button type="button" class="btn btn-dark py-4 border-0 animated zoomIn delay-1s fast" style="background-color: #E85D75">Change Building</button>
 					</div>
   				</div>
   			</div>
   		</div>
-  		<div class="col-4 px-5" style="overflow: auto; position: absolute; right: 0; height: 100vh; background-color: #293241">
+  		<div class="col-4 px-5 slideInRight animated delay-1s" style="overflow: auto; position: absolute; right: 0; height: 100vh; background-color: #293241">
   			
   			<form class="form-inline pt-5 pb-4 justify-content-center sticky-top" style="background-color: #293241;">
 			    <input class="form-control mr-sm-2 w-75 py-2" id="myInput" onkeyup="search()" type="search" placeholder="Search" aria-label="Search">
@@ -202,6 +205,9 @@
     		s = p.split("");
     		r = parseInt(s[1]) + 1;
     		$("#btn" + r).click();
+    		if(s[2] == 6 && floor == 0){
+    			s[2] = parseInt(s[2]) + 1;
+    		}
     		$("#c" + s[2]).click();
     	});	
 
