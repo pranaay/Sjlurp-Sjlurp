@@ -16,55 +16,71 @@
     	.blocks {
     		cursor: pointer;
     	}
+    	.roads {
+    		background: #E85D75;
+    		display: none;
+    	}
+    	.show {
+    		display: flex;
+    	}
+    	.alinkcolor {
+    		color: white;
+    	}
+    	.alinkcolor:hover{
+    		color: #E85D75;
+    	}
+    	.listKaKuda {
+    		margin-bottom: 20px;
+    	}
     </style>
     <title>IIITD Seminar Block</title>
   </head>
-  <body class="container-fluid bg-secondary" style="width: 100vw; height: 100vh; overflow-y: hidden;">
+  <body class="container-fluid" style="width: 100vw; height: 100vh; overflow-y: hidden; background: #E0FBFC">
   	<div class="row" style="height: 100vh;">
   		<div class="col-8" style="height: 100vh; position: absolute; float: left;">
   			<div class="row h-75 p-5" style="position: relative;">
   				<div class="h-100 w-100">
-  					<img src="floor1.jpeg" class="img-fluid h-100">
+  					<img src="floor0.png" class="img-fluid h-100" id="imageMeri">
   				</div>
   				<div class="p-5" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0">
-  					<div class="bg-danger" style="position: absolute; top: 37.5%; left: 50%; height: 55px; width: 15px;" id="1">
-  						1
+  					<div class="roads" style="position: absolute; top: 37.5%; left: 50%; height: 55px; width: 15px;" id="1">
+  						
   					</div>
-  					<div class="bg-danger" style="position: absolute; top: 37.5%; left: 25%; height: 55px; width: 15px;" id="2">
-  						2
+  					<div class="roads" style="position: absolute; top: 37.5%; left: 25%; height: 55px; width: 15px;" id="2">
+  						
   					</div>
-  					<div class="bg-danger" style="position: absolute; top: 37.5%; left: 10%; height: 55px; width: 15px;" id="3">
-  						3
+  					<div class="roads" style="position: absolute; top: 37.5%; left: 10%; height: 55px; width: 15px;" id="3">
+  						
   					</div>
-  					<div class="bg-danger" style="position: absolute; top: 37.5%; left: 70%; height: 55px; width: 15px;" id="4">
-  						4
+  					<div class="roads" style="position: absolute; top: 37.5%; left: 70%; height: 55px; width: 15px;" id="4">
+  						
   					</div>
-  					<div class="bg-danger" style="position: absolute; top: 37.5%; left: 85%; height: 55px; width: 15px;" id="5">
-  						5
+  					<div class="roads" style="position: absolute; top: 37.5%; left: 85%; height: 55px; width: 15px;" id="5">
+  						
   					</div>
-  					<div class="bg-danger" style="position: absolute; top: 47%; left: 10%; width: 26.6%; height: 15px;"  id="6">
-  						6
+  					<div class="roads" style="position: absolute; top: 47%; left: 10%; width: 26.6%; height: 15px;"  id="6">
+  						
   					</div>
-  					<div class="bg-danger" style="position: absolute; top: 47%; left: 25%; width: 26.6%; height: 15px;" id="7">
-  						7
+  					<div class="roads" style="position: absolute; top: 47%; left: 25%; width: 26.6%; height: 15px;" id="7">
+  						
   					</div>
-  					<div class="bg-danger" style="position: absolute; top: 47%; left: 50%; width: 21.7%; height: 15px;" id="8">
-  						8
+  					<div class="roads" style="position: absolute; top: 47%; left: 50%; width: 21.7%; height: 15px;" id="8">
+  						
   					</div>
-  					<div class="bg-danger" style="position: absolute; top: 47%; left: 70%; width: 10%; height: 15px;" id="9">
-  						9
+  					<div class="roads" style="position: absolute; top: 47%; left: 70%; width: 10%; height: 15px;" id="9">
+  						
   					</div>
-  					<div class="bg-danger" style="position: absolute; top: 47%; left: 78.4%; width: 8.25%; height: 15px;" id="10">
-  						10
+  					<div class="roads" style="position: absolute; top: 47%; left: 78.4%; width: 8.25%; height: 15px;" id="10">
+  						
   					</div>
-  					<div class="bg-danger" style="position: absolute; top: 49%; left: 25%; height: 69px; width: 15px;" id="11">
-  						11
+  					<div class="roads" style="position: absolute; top: 49%; left: 25%; height: 69px; width: 15px;" id="11">
+  						
   					</div>
-  					<div class="bg-danger" style="position: absolute; top: 47%; left: 50%; height: 81px; width: 15px;" id="12">
-  						12
+  					<div class="roads" style="position: absolute; top: 47%; left: 50%; height: 81px; width: 15px;" id="12">
+  						
   					</div>
-  					<div class="bg-danger" style="position: absolute; top: 49%; left: 78.4%; height: 69px; width: 15px;" id="13">
-  						13
+  					<div class="roads" style="position: absolute; top: 49%; left: 78.4%; height: 69px; width: 15px;" id="13">
+  						
   					</div>
   					<div class="blocks" style="position: absolute; top: 8%; left: 5.4%; height: 170px; width: 120px;" id="c1"></div>
   					<div class="blocks" style="position: absolute; top: 8%; left: 20%; height: 170px; width: 120px;" id="c2"></div>
@@ -78,26 +94,40 @@
   			<div class="row h-25">
   				<div class="row w-100">
 					<div class="col justify-content-center d-flex align-items-center">
-						<button type="button" class="btn btn-light w-50 py-2">Ground Floor</button>
+						<button id="btn1" type="button" onclick="changeImage0(event)" class="btn btn-dark py-4 border-0" style="background-color: #293241">Seminar Ground Floor</button>
 					</div>
 					<div class="col justify-content-center d-flex align-items-center">
-						<button type="button" class="btn btn-light w-50 py-2">First Floor</button>
+						<button id="btn2" type="button" onclick="changeImage1(event)" class="btn btn-dark py-4 border-0" style="background-color: #3D5A80">Seminar First Floor</button>
 					</div>
 					<div class="col justify-content-center d-flex align-items-center">
-						<button type="button" class="btn btn-light py-2">Change Building</button>
+						<button type="button" class="btn btn-dark py-4 border-0" style="background-color: #E85D75">Change Building</button>
 					</div>
   				</div>
   			</div>
   		</div>
-  		<div class="col-4 bg-info px-5" style="overflow: auto; position: absolute; right: 0; height: 100vh">
+  		<div class="col-4 px-5" style="overflow: auto; position: absolute; right: 0; height: 100vh; background-color: #293241">
   			
-  			<form class="form-inline pt-5 pb-4 justify-content-center sticky-top bg-info">
-			    <input class="form-control mr-sm-2 w-75 py-2" type="search" placeholder="Search" aria-label="Search">
+  			<form class="form-inline pt-5 pb-4 justify-content-center sticky-top" style="background-color: #293241;">
+			    <input class="form-control mr-sm-2 w-75 py-2" id="myInput" onkeyup="search()" type="search" placeholder="Search" aria-label="Search">
 			    <button class="btn btn-outline-light my-2 py-2 my-sm-0" type="submit">Search</button>
 			</form>
 
-			<div class="pl-3">
-				<p style="font-size: 15pt">Seminar Block C01</p>
+			<div class="pl-2 text-white">
+				<ul id="myUL" style="list-style-type: none" class="p-0">
+				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">Seminar C01</a></li>
+				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">Seminar C02</a></li>
+				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">Seminar C03</a></li>
+				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">Seminar C04</a></li>
+				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">Seminar C05</a></li>
+				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">Seminar C06</a></li>
+				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">Seminar C11</a></li>
+				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">Seminar C12</a></li>
+				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">Seminar C13</a></li>
+				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">Seminar C14</a></li>
+				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">Seminar C15</a></li>
+				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">Seminar C16</a></li>
+				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">Seminar C17</a></li>
+				</ul>
 			</div>
   		</div>
   	</div>
@@ -108,13 +138,89 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script type="text/javascript">
     	
-    	c11 = [1, 7, 3, 6]
-    	c12 = [1, 7, 2]
-    	c13 = [1, 4, 8]
-    	c14 = [1, 4, 8, 9, 10, 5]
-    	c15 = [1, 7, 11]
-    	c16 = [1, 12]
-    	c17 = [1, 8, 9, 13]
+    	c11 = [1, 7, 3, 6];
+    	c12 = [1, 7, 2];
+    	c13 = [1, 4, 8];
+    	c14 = [1, 8, 9, 10, 5];
+    	c15 = [1, 7, 11];
+    	c16 = [1, 12];
+    	c17 = [1, 8, 9, 13];
+
+    	c01 = [1, 7, 3, 6];
+    	c02 = [1, 7, 2];
+    	c03 = [1, 4, 8];
+    	c04 = [1, 8, 9, 10, 5];
+    	c05 = [1, 7, 11];
+    	c06 = [1, 8, 9, 13];
+
+    	floor = 0;
+
+    	function changeImage0(event) {
+    		for (var i = 1; i <= 13; i++) {
+    			$('#' + i).removeClass('show');
+    		}
+    		event.preventDefault();
+    		$('#imageMeri').attr('src', 'floor0.png'); 
+    		floor = 0;
+    		document.getElementById("btn1").style.backgroundColor = "#293241";    		
+    		document.getElementById("btn2").style.backgroundColor = "#3D5A80";    		
+    	}
+
+    	function changeImage1(event) {
+    		for (var i = 1; i <= 13; i++) {
+    			$('#' + i).removeClass('show');
+    		}
+    		event.preventDefault();
+    		$('#imageMeri').attr('src', 'floor1.png'); 
+    		floor = 1;
+    		document.getElementById("btn2").style.backgroundColor = "#293241";    		
+    		document.getElementById("btn1").style.backgroundColor = "#3D5A80"; 
+    	}
+
+    	$(".blocks").click(function(){
+    		workon = this.id;
+    		if(floor == 0){
+    			if(this.id == 'c7'){
+    				workon = 'c6'
+    			}
+    			if(this.id == 'c6'){
+    				return;
+    			}
+    		}
+    		for (var i = 1; i <= 13; i++) {
+    			$('#' + i).removeClass('show');
+    		}
+    		fillArr = eval("c" + floor +  workon.split("")[1]);
+    		for (var i = 0; i < fillArr.length; i++) {
+    			$('#' + fillArr[i]).addClass('show');
+    		}
+    	});	
+
+    	$(".alinkcolor").click(function(){
+    		s = this.innerHTML;
+    		p = s.split(" ")[1];
+    		s = p.split("");
+    		r = parseInt(s[1]) + 1;
+    		$("#btn" + r).click();
+    		$("#c" + s[2]).click();
+    	});	
+
+    	function search() {
+		    var input, filter, ul, li, a, i, txtValue;
+		    input = document.getElementById("myInput");
+		    filter = input.value.toUpperCase();
+		    ul = document.getElementById("myUL");
+		    li = ul.getElementsByTagName("li");
+		    for (i = 0; i < li.length; i++) {
+		        a = li[i].getElementsByTagName("a")[0];
+		        txtValue = a.textContent || a.innerText;
+		        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+		            li[i].style.display = "";
+		        } else {
+		            li[i].style.display = "none";
+		        }
+		    }
+		}
 
     </script>
   </body>
