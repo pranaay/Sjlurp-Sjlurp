@@ -1,11 +1,11 @@
-from flask import Flask
+from flask import Flask ,render_template
 import RPi.GPIO as GPIO
 import time 
 app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-	return getState()
+	return render_template("index.html",state = getState())
 
 
 def getState():
