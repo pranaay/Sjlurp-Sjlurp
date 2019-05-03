@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <style type="text/css">
+    	html, body {
+    		font-family: 'Open Sans', sans-serif;
+    	}
+    	.blocks {
+    		cursor: pointer;
+    	}
+    </style>
+    <title>IIITD Seminar Block</title>
+  </head>
+  <body class="container-fluid bg-secondary" style="width: 100vw; height: 100vh; overflow-y: hidden;">
+  	<div class="row" style="height: 100vh;">
+  		<div class="col-8" style="height: 100vh; position: absolute; float: left;">
+  			<div class="row h-75 p-5" style="position: relative;">
+  				<div class="h-100 w-100">
+  					<img src="floor1.jpeg" class="img-fluid h-100">
+  				</div>
+  				<div class="p-5" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0">
+  					<div class="bg-danger" style="position: absolute; top: 37.5%; left: 50%; height: 55px; width: 15px;" id="1">
+  						1
+  					</div>
+  					<div class="bg-danger" style="position: absolute; top: 37.5%; left: 25%; height: 55px; width: 15px;" id="2">
+  						2
+  					</div>
+  					<div class="bg-danger" style="position: absolute; top: 37.5%; left: 10%; height: 55px; width: 15px;" id="3">
+  						3
+  					</div>
+  					<div class="bg-danger" style="position: absolute; top: 37.5%; left: 70%; height: 55px; width: 15px;" id="4">
+  						4
+  					</div>
+  					<div class="bg-danger" style="position: absolute; top: 37.5%; left: 85%; height: 55px; width: 15px;" id="5">
+  						5
+  					</div>
+  					<div class="bg-danger" style="position: absolute; top: 47%; left: 10%; width: 26.6%; height: 15px;"  id="6">
+  						6
+  					</div>
+  					<div class="bg-danger" style="position: absolute; top: 47%; left: 25%; width: 26.6%; height: 15px;" id="7">
+  						7
+  					</div>
+  					<div class="bg-danger" style="position: absolute; top: 47%; left: 50%; width: 21.7%; height: 15px;" id="8">
+  						8
+  					</div>
+  					<div class="bg-danger" style="position: absolute; top: 47%; left: 70%; width: 10%; height: 15px;" id="9">
+  						9
+  					</div>
+  					<div class="bg-danger" style="position: absolute; top: 47%; left: 78.4%; width: 8.25%; height: 15px;" id="10">
+  						10
+  					</div>
+  					<div class="bg-danger" style="position: absolute; top: 49%; left: 25%; height: 69px; width: 15px;" id="11">
+  						11
+  					</div>
+  					<div class="bg-danger" style="position: absolute; top: 47%; left: 50%; height: 81px; width: 15px;" id="12">
+  						12
+  					</div>
+  					<div class="bg-danger" style="position: absolute; top: 49%; left: 78.4%; height: 69px; width: 15px;" id="13">
+  						13
+  					</div>
+  					<div class="blocks" style="position: absolute; top: 8%; left: 5.4%; height: 170px; width: 120px;" id="c1"></div>
+  					<div class="blocks" style="position: absolute; top: 8%; left: 20%; height: 170px; width: 120px;" id="c2"></div>
+  					<div class="blocks" style="position: absolute; top: 8%; left: 67%; height: 170px; width: 120px;" id="c3"></div>
+  					<div class="blocks" style="position: absolute; top: 8%; left: 81.3%; height: 170px; width: 120px;" id="c4"></div>
+  					<div class="blocks" style="position: absolute; top: 61.5%; left: 5.4%; height: 170px; width: 260px;" id="c5"></div>
+  					<div class="blocks" style="position: absolute; top: 61.5%; left: 37%; height: 170px; width: 260px;" id="c6"></div>
+  					<div class="blocks" style="position: absolute; top: 61.5%; left: 74%; height: 170px; width: 130px;" id="c7"></div>
+  				</div>
+  			</div>
+  			<div class="row h-25">
+  				<div class="row w-100">
+					<div class="col justify-content-center d-flex align-items-center">
+						<button type="button" class="btn btn-light w-50 py-2">Ground Floor</button>
+					</div>
+					<div class="col justify-content-center d-flex align-items-center">
+						<button type="button" class="btn btn-light w-50 py-2">First Floor</button>
+					</div>
+					<div class="col justify-content-center d-flex align-items-center">
+						<button type="button" class="btn btn-light py-2">Change Building</button>
+					</div>
+  				</div>
+  			</div>
+  		</div>
+  		<div class="col-4 bg-info px-5" style="overflow: auto; position: absolute; right: 0; height: 100vh">
+  			
+  			<form class="form-inline pt-5 pb-4 justify-content-center sticky-top bg-info">
+			    <input class="form-control mr-sm-2 w-75 py-2" type="search" placeholder="Search" aria-label="Search">
+			    <button class="btn btn-outline-light my-2 py-2 my-sm-0" type="submit">Search</button>
+			</form>
+
+			<div class="pl-3">
+				<p style="font-size: 15pt">Seminar Block C01</p>
+			</div>
+  		</div>
+  	</div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+    	
+    	c11 = [1, 7, 3, 6]
+    	c12 = [1, 7, 2]
+    	c13 = [1, 4, 8]
+    	c14 = [1, 4, 8, 9, 10, 5]
+    	c15 = [1, 7, 11]
+    	c16 = [1, 12]
+    	c17 = [1, 8, 9, 13]
+
+    </script>
+  </body>
+</html>
