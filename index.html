@@ -107,10 +107,10 @@
   			<div class="row h-25">
   				<div class="row w-100">
 					<div class="col justify-content-center d-flex align-items-center">
-						<button id="btn1" type="button" onclick="changeImage0(event)" class="btn btn-dark py-4 border-0 animated zoomIn delay-1s fast" style="background-color: #293241">Seminar Ground Floor</button>
+						<button id="btn1" type="button" onclick="changeImage0(event);" class="btn btn-dark py-4 border-0 animated zoomIn delay-1s fast" style="background-color: #293241">Seminar Ground Floor</button>
 					</div>
 					<div class="col justify-content-center d-flex align-items-center">
-						<button id="btn2" type="button" onclick="changeImage1(event)" class="btn btn-dark py-4 border-0 animated zoomIn delay-1s fast" style="background-color: #3D5A80">Seminar First Floor</button>
+						<button id="btn2" type="button" onclick="changeImage1(event);" class="btn btn-dark py-4 border-0 animated zoomIn delay-1s fast" style="background-color: #3D5A80">Seminar First Floor</button>
 					</div>
 					<div class="col justify-content-center d-flex align-items-center">
 						<button type="button" class="btn btn-dark py-4 border-0 animated zoomIn delay-1s fast" style="background-color: #E85D75">Change Building</button>
@@ -153,143 +153,141 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script type="text/javascript">
-    	$( document ).ready(function() {
-	    	
-	    	personIdentifier = false;
+    	
+    	personIdentifier = false;
 
-	    	c11 = [1, 7, 3, 6];
-	    	c12 = [1, 7, 2];
-	    	c13 = [1, 4, 8];
-	    	c14 = [1, 8, 9, 10, 5];
-	    	c15 = [1, 7, 11];
-	    	c16 = [1, 12];
-	    	c17 = [1, 8, 9, 13];
+    	c11 = [1, 7, 3, 6];
+    	c12 = [1, 7, 2];
+    	c13 = [1, 4, 8];
+    	c14 = [1, 8, 9, 10, 5];
+    	c15 = [1, 7, 11];
+    	c16 = [1, 12];
+    	c17 = [1, 8, 9, 13];
 
-	    	c01 = [1, 7, 3, 6];
-	    	c02 = [1, 7, 2];
-	    	c03 = [1, 4, 8];
-	    	c04 = [1, 8, 9, 10, 5];
-	    	c05 = [1, 7, 11];
-	    	c06 = [1, 8, 9, 13];
+    	c01 = [1, 7, 3, 6];
+    	c02 = [1, 7, 2];
+    	c03 = [1, 4, 8];
+    	c04 = [1, 8, 9, 10, 5];
+    	c05 = [1, 7, 11];
+    	c06 = [1, 8, 9, 13];
 
-	    	floor = 0;
+    	floor = 0;
 
-	    	function changeImage0(event) {
-	    		for (var i = 1; i <= 13; i++) {
-	    			$('#' + i).removeClass('show');
-	    		}
-	    		event.preventDefault();
-	    		$('#imageMeri').attr('src', 'floor0.png'); 
-	    		floor = 0;
-	    		document.getElementById("btn1").style.backgroundColor = "#293241";    		
-	    		document.getElementById("btn2").style.backgroundColor = "#3D5A80";    		
-	    	}
+    	function changeImage0(event) {
+    		for (var i = 1; i <= 13; i++) {
+    			$('#' + i).removeClass('show');
+    		}
+    		event.preventDefault();
+    		$('#imageMeri').attr('src', 'floor0.png'); 
+    		floor = 0;
+    		document.getElementById("btn1").style.backgroundColor = "#293241";    		
+    		document.getElementById("btn2").style.backgroundColor = "#3D5A80";    		
+    	}
 
-	    	function changeImage1(event) {
-	    		for (var i = 1; i <= 13; i++) {
-	    			$('#' + i).removeClass('show');
-	    		}
-	    		event.preventDefault();
-	    		$('#imageMeri').attr('src', 'floor1.png'); 
-	    		floor = 1;
-	    		document.getElementById("btn2").style.backgroundColor = "#293241";    		
-	    		document.getElementById("btn1").style.backgroundColor = "#3D5A80"; 
-	    	}
+    	function changeImage1(event) {
+    		for (var i = 1; i <= 13; i++) {
+    			$('#' + i).removeClass('show');
+    		}
+    		event.preventDefault();
+    		$('#imageMeri').attr('src', 'floor1.png'); 
+    		floor = 1;
+    		document.getElementById("btn2").style.backgroundColor = "#293241";    		
+    		document.getElementById("btn1").style.backgroundColor = "#3D5A80"; 
+    	}
 
-	    	$(".blocks").click(function(){
-	    		workon = this.id;
-	    		if(floor == 0){
-	    			if(this.id == 'c7'){
-	    				workon = 'c6'
-	    			}
-	    			if(this.id == 'c6'){
-	    				return;
-	    			}
-	    		}
-	    		for (var i = 1; i <= 13; i++) {
-	    			$('#' + i).removeClass('show');
-	    		}
-	    		fillArr = eval("c" + floor +  workon.split("")[1]);
-	    		for (var i = 0; i < fillArr.length; i++) {
-	    			$('#' + fillArr[i]).addClass('show animated fadeIn');
-	    		}
-	    	});	
+    	$(".blocks").click(function(){
+    		workon = this.id;
+    		if(floor == 0){
+    			if(this.id == 'c7'){
+    				workon = 'c6'
+    			}
+    			if(this.id == 'c6'){
+    				return;
+    			}
+    		}
+    		for (var i = 1; i <= 13; i++) {
+    			$('#' + i).removeClass('show');
+    		}
+    		fillArr = eval("c" + floor +  workon.split("")[1]);
+    		for (var i = 0; i < fillArr.length; i++) {
+    			$('#' + fillArr[i]).addClass('show animated fadeIn');
+    		}
+    	});	
 
-	    	$(".alinkcolor").click(function(){
-	    		s = this.innerHTML;
-	    		p = s.split(" ")[1];
-	    		s = p.split("");
-	    		r = parseInt(s[1]) + 1;
-	    		$("#btn" + r).click();
-	    		if(s[2] == 6 && floor == 0){
-	    			s[2] = parseInt(s[2]) + 1;
-	    		}
-	    		$("#c" + s[2]).click();
-	    	});	
+    	$(".alinkcolor").click(function(){
+    		s = this.innerHTML;
+    		p = s.split(" ")[1];
+    		s = p.split("");
+    		r = parseInt(s[1]) + 1;
+    		$("#btn" + r).click();
+    		if(s[2] == 6 && floor == 0){
+    			s[2] = parseInt(s[2]) + 1;
+    		}
+    		$("#c" + s[2]).click();
+    	});	
 
-	    	function search() {
-			    var input, filter, ul, li, a, i, txtValue;
-			    input = document.getElementById("myInput");
-			    filter = input.value.toUpperCase();
-			    ul = document.getElementById("myUL");
-			    li = ul.getElementsByTagName("li");
-			    for (i = 0; i < li.length; i++) {
-			        a = li[i].getElementsByTagName("a")[0];
-			        txtValue = a.textContent || a.innerText;
-			        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-			            li[i].style.display = "";
-			        } else {
-			            li[i].style.display = "none";
-			        }
-			    }
-			}
-			
-			if(!personIdentifier){
-				setInterval(function() {			
-					$.get( "http://0.0.0.0:5000", function( data ) {
-					  if(data == "true"){
-					  	personIdentifier = true;
-					  }
-					  else{
-					  	personIdentifier = false;
-					  }
-					  if(personIdentifier){
-					  	removeVid();
-					  }
-					  else{
-					  	addVid();
-					  }
-					});
-				}, 2000);
-			}
-			else{
-				setInterval(function() {			
-					$.get( "http://0.0.0.0:5000", function( data ) {
-					  if(data == "true"){
-					  	personIdentifier = true;
-					  }
-					  else{
-					  	personIdentifier = false;
-					  }
-					  if(personIdentifier){
-					  	removeVid();
-					  }
-					  else{
-					  	addVid();
-					  }
-					});
-				}, 15000);
-			}
-
-		});
-
+    	function search() {
+		    var input, filter, ul, li, a, i, txtValue;
+		    input = document.getElementById("myInput");
+		    filter = input.value.toUpperCase();
+		    ul = document.getElementById("myUL");
+		    li = ul.getElementsByTagName("li");
+		    for (i = 0; i < li.length; i++) {
+		        a = li[i].getElementsByTagName("a")[0];
+		        txtValue = a.textContent || a.innerText;
+		        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+		            li[i].style.display = "";
+		        } else {
+		            li[i].style.display = "none";
+		        }
+		    }
+		}
+		
+		if(!personIdentifier){
+			setInterval(function() {			
+				$.get( "http://0.0.0.0:5000", function( data ) {
+				  if(data == "true"){
+				  	personIdentifier = true;
+				  }
+				  else{
+				  	personIdentifier = false;
+				  }
+				  if(personIdentifier){
+				  	removeVid();
+				  }
+				  else{
+				  	addVid();
+				  }
+				});
+			}, 2000);
+		}
+		else{
+			setInterval(function() {			
+				$.get( "http://0.0.0.0:5000", function( data ) {
+				  if(data == "true"){
+				  	personIdentifier = true;
+				  }
+				  else{
+				  	personIdentifier = false;
+				  }
+				  if(personIdentifier){
+				  	removeVid();
+				  }
+				  else{
+				  	addVid();
+				  }
+				});
+			}, 15000);
+		}
 
 		function removeVid() {
 			$("#vidWrap").addClass("hide");
+			personIdentifier = true;
 		}
 
 		function addVid() {
 			$("#vidWrap").removeClass("hide");	
+			personIdentifier = false;
 		}
 
     </script>
