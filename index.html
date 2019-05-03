@@ -43,11 +43,11 @@
   </head>
   <body class="container-fluid p-0" style="width: 100vw; height: 100vh; overflow: hidden; background: #E0FBFC">
   	
-  	<div style="position: absolute; height: 100vh; width: 100vw; z-index: 999" id="vidWrap">
+  	<!-- <div style="position: absolute; height: 100vh; width: 100vw; z-index: 999" id="vidWrap">
 	  	<video class="w-100 h-100" autoplay muted onclick="removeVid()">
 		  	<source src="vid.mp4" type="video/mp4">
 		</video>
-  	</div>
+  	</div> -->
   	
   	<div class="row" style="height: 100vh;">
   		<div class="col-8" style="height: 100vh; position: absolute; float: left;">
@@ -244,7 +244,7 @@
 		}
 		
 		
-		setInterval(function() {			
+		//setInterval(function() {			
 			if(!personIdentifier){
 				$.get( "http://0.0.0.0:5000", function( data ) {
 				  if(data == "true"){
@@ -255,9 +255,9 @@
 				  }
 				});
 			}	
-		}, 3000);
+		//}, 3000);
 		
-		setInterval(function() {			
+		//setInterval(function() {			
 			if(personIdentifier){
 				$.get( "http://0.0.0.0:5000", function( data ) {
 				  if(data != "true"){
@@ -268,7 +268,7 @@
 				  }
 				});
 			}
-		}, 15000);
+		//}, 15000);
 		
 
 		function removeVid() {
