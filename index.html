@@ -38,6 +38,9 @@
     	.hide {
     		display: none;
     	}
+    	.modalHider {
+    		display: none;
+    	}
     </style>
     <title>IIITD Seminar Block</title>
   </head>
@@ -49,6 +52,12 @@
 		</video>
   	</div>
 
+  	<div style="position: absolute; height: 100vh; width: 100vw; z-index: 97; background-color: rgba(0,0,0,0.7);" id="imgModal" class="modalHider" onclick="hideModal()">
+  		<div class="d-flex justify-content-center align-items-center h-100 w-100">
+	  		<img src="" id="modalImg" width="350" height="467">
+	  	</div>
+  	</div>
+  	
   	<div class="row" style="height: 100vh;">
   		<div class="col-8" style="height: 100vh; position: absolute; float: left;">
   			<div class="row h-75 p-5" style="position: relative;" id="animate1">
@@ -127,19 +136,19 @@
 
 			<div class="pl-2 text-white">
 				<ul id="myUL" style="list-style-type: none" class="p-0">
-				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">C01 - Dr. Vikram Goyal</a></li>
-				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">C02 - Dr. Richa Singh</a></li>
+				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">C01 - Dr. Vikram Goyal</a> <img src="i.png" class="pb-2 pl-3" onclick="showImg('vikram');"> </li>
+				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">C02 - Dr. Richa Singh</a> <img src="i.png" class="pb-2 pl-3" onclick="showImg('richa');"> </li>
 				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">C03 - Shannon Lab</a></li>
 				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">C04 - BTech Lab</a></li>
-				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">C05 - Dr. Aman Parnami</a></li>
+				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">C05 - Dr. Aman Parnami</a> <img src="i.png" class="pb-2 pl-2" onclick="showImg('aman');"> </li>
 				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">C06 - Weave Lab</a></li>
 				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">C11 - Infosys Lab</a></li>
 				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">C12 - MTech Lab</a></li>
-				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">C13 - Dr. Sujay Deb</a></li>
+				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">C13 - Dr. Sujay Deb</a> <img src="i.png" class="pb-2 pl-3" onclick="showImg('sujay');"> </li>
 				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">C14 - Embedded Lab</a></li>
 				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">C15 - Meeting Room</a></li>
 				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">C16 - Discussion Room</a></li>
-				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">C17 - Dr. Vivek Bohra</a></li>
+				  <li class="listKaKuda"><a href="#" class="alinkcolor" style="text-decoration: none; font-size: 20pt">C17 - Dr. Vivek Bohra</a> <img src="i.png" class="pb-2 pl-3" onclick="showImg('vivek');"> </li>
 				</ul>
 			</div>
   		</div>
@@ -294,6 +303,15 @@
 		function addVid() {
 			personIdentifier = false;
 			$("#vidWrap").removeClass("hide");	
+		}
+
+		function showImg(string) {
+			$("#modalImg").attr('src', string + '.jpg');
+			$("#imgModal").removeClass("modalHider");
+		}
+
+		function hideModal() {
+			$("#imgModal").addClass("modalHider");
 		}
 
     </script>
