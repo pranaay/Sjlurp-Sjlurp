@@ -43,15 +43,15 @@
   </head>
   <body class="container-fluid p-0" style="width: 100vw; height: 100vh; overflow: hidden; background: #E0FBFC">
   	
-  	<!-- <div style="position: absolute; height: 100vh; width: 100vw; z-index: 999" id="vidWrap">
+  	<div style="position: absolute; height: 100vh; width: 100vw; z-index: 999" id="vidWrap">
 	  	<video class="w-100 h-100" autoplay muted onclick="removeVid()">
 		  	<source src="vid.mp4" type="video/mp4">
 		</video>
-  	</div> -->
+  	</div>
   	
   	<div class="row" style="height: 100vh;">
   		<div class="col-8" style="height: 100vh; position: absolute; float: left;">
-  			<div class="row h-75 p-5 animated zoomIn" style="position: relative;" id="animate1">
+  			<div class="row h-75 p-5" style="position: relative;" id="animate1">
   				<div class="h-100 w-100">
   					<img src="floor0.png" class="img-fluid h-100" id="imageMeri">
   				</div>
@@ -107,20 +107,20 @@
   			<div class="row h-25">
   				<div class="row w-100">
 					<div class="col justify-content-center d-flex align-items-center">
-						<button id="btn1" type="button" onclick="changeImage0(event);" class="btn btn-dark py-4 border-0 animated zoomIn delay-1s fast" id="animate2" style="background-color: #293241">Seminar Ground Floor</button>
+						<button id="btn1" type="button" onclick="changeImage0(event);" class="btn btn-dark py-4 border-0" style="background-color: #293241">Seminar Ground Floor</button>
 					</div>
 					<div class="col justify-content-center d-flex align-items-center">
-						<button id="btn2" type="button" onclick="changeImage1(event);" class="btn btn-dark py-4 border-0 animated zoomIn delay-1s fast" id="animate3" style="background-color: #3D5A80">Seminar First Floor</button>
+						<button id="btn2" type="button" onclick="changeImage1(event);" class="btn btn-dark py-4 border-0"style="background-color: #3D5A80">Seminar First Floor</button>
 					</div>
 					<div class="col justify-content-center d-flex align-items-center">
-						<button type="button" class="btn btn-dark py-4 border-0 disabled animated zoomIn delay-1s fast" id="animate4" style="background-color: #E85D75">Change Building</button>
+						<button type="button" class="btn btn-dark py-4 border-0 disabled" id="animate4" style="background-color: #E85D75">Change Building</button>
 					</div>
   				</div>
   			</div>
   		</div>
-  		<div class="col-4 px-5 slideInRight animated delay-1s" id="animate5" style="overflow: auto; position: absolute; right: 0; height: 100vh; background-color: #293241">
+  		<div class="col-4 px-5" id="animate5" style="overflow: auto; position: absolute; right: 0; height: 100vh; background-color: #293241">
   			
-  			<form class="form-inline pt-5 pb-4 justify-content-center sticky-top" style="background-color: #293241;">
+  			<form class="form-inline pt-5 pb-4 justify-content-center sticky-top" style="background-color: #293241; z-index: 9">
 			    <input class="form-control mr-sm-2 w-75 py-2" id="myInput" onkeyup="search()" type="search" placeholder="Where would you like go?" aria-label="Search">
 			    <button class="btn btn-outline-light my-2 py-2 my-sm-0" type="submit">Search</button>
 			</form>
@@ -243,8 +243,7 @@
 		    }
 		}
 		
-		
-		//setInterval(function() {			
+		setInterval(function() {			
 			if(!personIdentifier){
 				$.get( "http://0.0.0.0:5000", function( data ) {
 				  if(data == "true"){
@@ -255,9 +254,9 @@
 				  }
 				});
 			}	
-		//}, 3000);
+		}, 3000);
 		
-		//setInterval(function() {			
+		setInterval(function() {			
 			if(personIdentifier){
 				$.get( "http://0.0.0.0:5000", function( data ) {
 				  if(data != "true"){
@@ -268,12 +267,28 @@
 				  }
 				});
 			}
-		//}, 15000);
-		
+		}, 15000);
 
 		function removeVid() {
-			personIdentifier = true;
+			personIdentifider = true;
 			$("#vidWrap").addClass("hide");
+			
+			$("#animate1").addClass("animated zoomIn").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+				$(this).removeClass("animated zoomIn");
+			});
+			$("#btn1").addClass("animated zoomIn delay-1s fast").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+				$(this).removeClass("animated zoomIn delay-1s fast");
+			});
+			$("#btn2").addClass("animated zoomIn delay-1s fast").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+				$(this).removeClass("animated zoomIn delay-1s fast");
+			});
+			$("#animate4").addClass("animated zoomIn delay-1s fast").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+				$(this).removeClass("animated zoomIn delay-1s fast");
+			});
+			$("#animate5").addClass("slideInRight animated delay-1s").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+				$(this).removeClass("slideInRight animated delay-1s");
+			});
+			
 		}
 
 		function addVid() {
