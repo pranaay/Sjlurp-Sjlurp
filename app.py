@@ -34,7 +34,7 @@ def getState():
 	while GPIO.input(echo) == 1:
 		pass
 	stop = time.time()
-	if (stop - start)*17000 < 35:
+	if (stop - start)*17000 < 90:
 		
 		print("true")
 		return "true"
